@@ -1,0 +1,12 @@
+-- database.sql - Database schema
+CREATE DATABASE IF NOT EXISTS voice_typing_app;
+USE voice_typing_app;
+
+CREATE TABLE IF NOT EXISTS voice_notes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    session_id VARCHAR(255) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
